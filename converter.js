@@ -1,4 +1,5 @@
 const fs = require('fs');
+const checkSyntax = require('./checkSyntax.js');
 
 class Converter {
   constructor(mdFile, htmlFile) {
@@ -28,6 +29,8 @@ class Converter {
       if (err) {
         throw new Error('Cannot read file');
       }
+
+      checkSyntax(data);
 
       const formattedText = this.#getPreformatedText(data);
       const html = this.#patterns.reduce((prev, cur) => {
