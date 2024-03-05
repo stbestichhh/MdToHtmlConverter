@@ -31,7 +31,7 @@ class Converter {
 
       const formattedText = this.#getPreformatedText(data);
       const html = this.#patterns.reduce((prev, cur) => {
-        prev.replace(cur.regexp, cur.html);
+        return prev.replace(cur.regexp, cur.html);
       }, formattedText);
 
       const paragraphs = this.#getParagraphs(html);
