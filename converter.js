@@ -5,9 +5,8 @@ class Converter {
   constructor(mdFile, htmlFile) {
     this.mdFile = mdFile;
     this.htmlFile = htmlFile;
+    this.preformatedText = [];
   }
-
-  #preformatedText = [];
 
   #patterns = [
     {
@@ -51,14 +50,14 @@ class Converter {
       return text;
     }
 
-    this.#preformatedText.push(...preformattedText);
+    this.preformatedText.push(...preformattedText);
     return preformattedText.reduce((prev, cur, curIndex) => {
       return prev.replace(cur, `PRE{{${curIndex}}}PRE`)
     }, text);
   }
 
   #setPreformattedText(text) {
-    return this.#preformatedText.reduce((prev, cur, curIndex) => {
+    return this.preformatedText.reduce((prev, cur, curIndex) => {
       const html = `<pre>${cur.replace(/```/g, '')}</pre>`;
       return prev.replace(`PRE{{${curIndex}}}PRE`, html);
     }, text);
