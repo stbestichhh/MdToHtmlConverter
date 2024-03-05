@@ -15,13 +15,7 @@ This is a command line interface application for converting markdown syntax to h
 > [!IMPORTANT]
 > NodeJS 18.x+ has to be installed in your os.
 
-Install MdToHtmlConverter with npm:
-
-```bash
-npm install mdtohtmlconverter
-```
-
-or clone a git repository:
+Clone a git repository:
 
 ```bash
 git clone https://github.com/stbestichhh/MdToHtmlConverter.git
@@ -42,17 +36,6 @@ Use in your code:
 export Converter = from './converter.js';
 or
 const Converter = require('./converter.js');
-
-const converter = new Converter(mdfilePath, htmlfilePath);
-converter.convert();
-```
-
-Use in your code, installed as npm package:
-
-```JavaScript
-export Converter = from 'mdtohtmlconverter';
-or
-const Converter = require(mdtohtmlconverter);
 
 const converter = new Converter(mdfilePath, htmlfilePath);
 converter.convert();
