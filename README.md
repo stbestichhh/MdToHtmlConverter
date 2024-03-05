@@ -33,7 +33,7 @@ node index.js <Path/to/markdown/file> --out <Path/to/html/file> //Outputs to fil
 
 Use in your code:
 ```JavaScript
-export Converter = from './converter.js';
+import Converter from './converter.js';
 or
 const Converter = require('./converter.js');
 
