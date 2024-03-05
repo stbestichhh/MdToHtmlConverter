@@ -35,7 +35,8 @@ class Converter {
       }, formattedText);
 
       const paragraphs = this.#getParagraphs(html);
-      console.log(this.#setPreformattedText(paragraphs));
+      const result = this.#setPreformattedText(paragraphs);
+      this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
     });
   }
 
