@@ -27,9 +27,11 @@ cd MdToHtmlConverter
 Use as a cli command:
 
 ```bash
-node index.js <Path/to/markdown/file> //Outputs html to console
-node index.js <Path/to/markdown/file> --out <Path/to/html/file> //Outputs to file or creates a new one
+yarn convert <Path/to/markdown/file> //Outputs html to console
+yarn convert <Path/to/markdown/file> --out <Path/to/html/file> //Outputs to file or creates a new one
 ```
+> [!HINT]
+> You can use `npm run convert` instead of `yarn convert`
 
 Use in your code:
 ```JavaScript
