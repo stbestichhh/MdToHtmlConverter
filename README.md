@@ -32,12 +32,13 @@ $ npm i
 Use as a cli command:
 
 ```bash
-$ yarn convert <Path/to/markdown/file> //Outputs html to console
+$ yarn convert <Path/to/markdown/file> // Outputs html to console
 # or npm run convert ..
 
 # Flags:
---out <Path/to/html/file> //Outputs to file or creates a new one
---dt                      //Adds basic html page structure to the code
+--out <Path/to/html/file>    // Outputs to file or creates a new one
+--dt                         // Adds basic html page structure to the code
+--format=(formatted | html)  // Format type for output in console
 ```
 
 Use in your code:
