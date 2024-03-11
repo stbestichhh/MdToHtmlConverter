@@ -4,6 +4,7 @@
   "description": "Converts markdown to html",
   "main": "index.js",
   "scripts": {
+    "convert": "node index.js",
     "lint": "npx eslint .",
     "test": "jest"
   },

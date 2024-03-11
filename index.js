@@ -1,4 +1,4 @@
-const Converter = require('./converter.js');
+const Converter = require('./src/converter');
 
 if (process.argv.length < 3) {
   console.error('Usage: node index.js <inputMdFilePath> [--dt] [--out <outputHtmlFilePath>]');
