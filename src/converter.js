@@ -31,12 +31,12 @@ class Converter {
 
       checkSyntax(data);
 
-      const formattedText = this.#getPreformatedText(data);
+      const formattedText = this.getPreformatedText(data);
       const html = this.#patterns.reduce((prev, cur) => {
         return prev.replace(cur.regexp, cur.html);
       }, formattedText);
 
-      const paragraphs = this.#getParagraphs(html);
+      const paragraphs = this.getParagraphs(html);
       //const result = this.#setPreformattedText(paragraphs);
       let result;
       if (dtFlag !== -1) {
@@ -49,7 +49,7 @@ class Converter {
   <title>Document</title>
 </head>
 <body>
-  ${this.#setPreformattedText(paragraphs)}
+  ${this.setPreformattedText(paragraphs)}
 </body>
 </html>`
         this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
@@ -59,7 +59,7 @@ class Converter {
     });
   }
 
-  #getPreformatedText(text) {
+  getPreformatedText(text) {
     const preformattedPattern = /```([\s\S]*?)```/g;
     const preformattedText = text.match(preformattedPattern);
 
@@ -73,14 +73,14 @@ class Converter {
     }, text);
   }
 
-  #setPreformattedText(text) {
+  setPreformattedText(text) {
     return this.preformatedText.reduce((prev, cur, curIndex) => {
       const html = `<pre>${cur.replace(/```/g, '')}</pre>`;
       return prev.replace(`PRE{{${curIndex}}}PRE`, html);
     }, text);
   }
 
-  #getParagraphs(text) {
+  getParagraphs(text) {
     return text.split('\n\n').reduce((prev, cur) => {
       return `${prev}\n<p>${cur}</p>`;
     }, '');
