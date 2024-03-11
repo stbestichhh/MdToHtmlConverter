@@ -1,3 +1,6 @@
+/*global describe, it, expect*/
+/*eslint no-undef: "error"*/
+
 const checkSyntax = require('./checkSyntax');
 
 describe('Check syntax function', () => {
