@@ -77,3 +77,6 @@ $ npm run test:watch
 [2nd case](https://github.com/stbestichhh/MdToHtmlConverter/commit/3015a9dd45f8f85bd1ceebda79c136061cdd66a0)
 
 [3rd](https://github.com/stbestichhh/MdToHtmlConverter/commit/4c9eb81f3533798111a89091619f36b82ddff421)
+
+# Conclusion
+Writing tests take a lot of time, but after that I can write code and see if it works or not without testing it myself, which definitely reduces development time. Also writing CI helped me with automating runnig this tests on every push to the remote repository, so I can get a message if my tests fell. In general, the tests helped me a lot in automating the testing of the project, which reduced development time.
