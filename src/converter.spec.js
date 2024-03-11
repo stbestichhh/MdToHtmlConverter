@@ -1,4 +1,4 @@
-/*global describe, it, expect*/
+/*global describe, it, expect, beforeEach, jest, afterEach*/
 /*eslint no-undef: "error"*/
 const Converter = require('./converter');
 
