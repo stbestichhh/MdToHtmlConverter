@@ -23,7 +23,7 @@ class Converter {
     },
   ];
 
-  convert() {
+  convert(dtFlag) {
     fs.readFile(this.mdFile, 'utf8', (err, data) => {
       if (err) {
         throw new Error('Cannot read file');
@@ -37,8 +37,25 @@ class Converter {
       }, formattedText);
 
       const paragraphs = this.#getParagraphs(html);
-      const result = this.#setPreformattedText(paragraphs);
-      this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
+      //const result = this.#setPreformattedText(paragraphs);
+      let result;
+      if (dtFlag !== -1) {
+        result = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  ${this.#setPreformattedText(paragraphs)}
+</body>
+</html>`
+        this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
+      } else {
+        this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
+      }
     });
   }
 
