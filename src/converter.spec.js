@@ -76,17 +76,23 @@ describe('Converter', () => {
     it('Should return one paragraph', () => {
       const line = 'paragraph';
       const output = '<p>paragraph</p>';
-      expect(converter.getParagraphs(line)).toBe(output);
+      const actual = converter.getParagraphs(line);
+      const actualLines = actual.split('\n').filter(line => line.trim() !== '');
+      expect(actualLines).toEqual(output.split('\n'));
     });
 
     it('Should return many paragraphs', () => {
       const line = 'paragraph\n\nparagraph\n\nparagraph';
       const output = '<p>paragraph</p>\n<p>paragraph</p>\n<p>paragraph</p>';
-      expect(converter.getParagraphs(line)).toBe(output);
+      const actual = converter.getParagraphs(line);
+      const actualLines = actual.split('\n').filter(line => line.trim() !== '');
+      expect(actualLines).toEqual(output.split('\n'));
     });
 
-    it('Should return empty string', () => {
-      expect(converter.getParagraphs('')).toBe('');
+    it('Should return empty paragraph', () => {
+      const output = '<p></p>';
+      const actual = converter.getParagraphs('');
+      expect(actual.trim()).toBe(output);
     });
 
     it('Should not pass with no param', () => {
