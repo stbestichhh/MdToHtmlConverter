@@ -103,4 +103,34 @@ describe('Converter', () => {
       expect(() => converter.getParagraphs(123)).toThrow();
     });
   });
+
+  describe('printFormattedText', () => {
+    let consoleLogSpy;
+
+    beforeEach(() => {
+      consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    });
+
+    afterEach(() => {
+      consoleLogSpy.mockRestore();
+    });
+
+    it('should print text with formatting', () => {
+      const text = 'Hello, World!';
+      converter.printFormattedText(text);
+      expect(consoleLogSpy).toHaveBeenCalledWith('\x1b[7m%s\x1b[0m', text);
+    });
+
+    it('should print empty string with formatting', () => {
+      const text = '';
+      converter.printFormattedText(text);
+      expect(consoleLogSpy).toHaveBeenCalledWith('\x1b[7m%s\x1b[0m', text);
+    });
+
+    it('should print multiline text with formatting', () => {
+      const text = 'Line 1\nLine 2\nLine 3';
+      converter.printFormattedText(text);
+      expect(consoleLogSpy).toHaveBeenCalledWith('\x1b[7m%s\x1b[0m', text);
+    });
+  });
 });
