@@ -11,7 +11,7 @@ describe('Check syntax function', () => {
   });
 
   it('Should throw if line has wrong syntax', () => {
-    const line = '**_something_**';
+    const line = '**`_something_`**';
     const errorMessage = line + ' | Invalid input: Lines with the pattern **_$1_** are not allowed.';
     expect(() => checkSyntax(line)).toThrow(errorMessage);
   });
