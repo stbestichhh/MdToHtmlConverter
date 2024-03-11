@@ -37,12 +37,13 @@ $ yarn convert <Path/to/markdown/file> //Outputs html to console
 
 Use in your code:
 ```JavaScript
-import Converter from './converter.js';
+import Converter from './src/converter.js';
 or
-const Converter = require('./converter.js');
+const Converter = require('./src/converter.js');
 
 const converter = new Converter(mdfilePath, htmlfilePath);
-converter.convert();
+# doctype: -1 or 0
+converter.convert(doctype);
 ```
 
 ## Authors
