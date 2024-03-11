@@ -28,10 +28,12 @@ Use as a cli command:
 
 ```bash
 $ yarn convert <Path/to/markdown/file> //Outputs html to console
-$ yarn convert <Path/to/markdown/file> --out <Path/to/html/file> //Outputs to file or creates a new one
+# or npm run convert ..
+
+# Flags:
+--out <Path/to/html/file> //Outputs to file or creates a new one
+--dt                      //Adds basic html page structure to the code
 ```
-> [!HINT]
-> You can use `npm run convert` instead of `yarn convert`
 
 Use in your code:
 ```JavaScript
