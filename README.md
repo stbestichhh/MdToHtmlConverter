@@ -42,7 +42,7 @@ or
 const Converter = require('./src/converter.js');
 
 const converter = new Converter(mdfilePath, htmlfilePath);
-# doctype: -1 or 0
+// doctype: -1 or 0
 converter.convert(doctype);
 ```
 
