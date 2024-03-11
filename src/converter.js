@@ -21,6 +21,26 @@ class Converter {
       regexp: /(?<=[ ,.:;\n\t]|^)`(?=\S)(.+?)(?=\S)`(?=[ ,.:;\n\t]|$)/g,
       html: '<tt>$1</tt>',
     },
+    {
+      regexp: /(?<=^|[\n])#{5}\s*(.+?)(?=\s|$)/g,
+      html: '<h5>$1</h6>',
+    },
+    {
+      regexp: /(?<=^|[\n])#{4}\s*(.+?)(?=\s|$)/g,
+      html: '<h4>$1</h4>',
+    },
+    {
+      regexp: /(?<=^|[\n])#{3}\s*(.+?)(?=\s|$)/g,
+      html: '<h3>$1</h3>',
+    },
+    {
+      regexp: /(?<=^|[\n])#{2}\s*(.+?)(?=\s|$)/g,
+      html: '<h2>$1</h2>',
+    },
+    {
+      regexp: /(?<=^|[\n])#{1}\s*(.+?)(?=\s|$)/g,
+      html: '<h1>$1</h1>',
+    },
   ];
 
   convert(dtFlag) {
@@ -37,7 +57,6 @@ class Converter {
       }, formattedText);
 
       const paragraphs = this.getParagraphs(html);
-      //const result = this.#setPreformattedText(paragraphs);
       let result;
       if (dtFlag !== -1) {
         result = `
@@ -54,6 +73,7 @@ class Converter {
 </html>`
         this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
       } else {
+        const result = this.setPreformattedText(paragraphs);
         this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
       }
     });
