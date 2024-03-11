@@ -20,6 +20,11 @@ Clone a git repository:
 ```bash
 $ git clone https://github.com/stbestichhh/MdToHtmlConverter.git
 $ cd MdToHtmlConverter
+
+# Install dependencies with one of this commands:
+$ yarn
+# or
+$ npm i
 ```
 
 ## Usage
@@ -46,10 +51,26 @@ const converter = new Converter(mdfilePath, htmlfilePath);
 converter.convert(doctype);
 ```
 
-## Authors
+## Tests
 
-- [@stbestichhh](https://www.github.com/stbestichhh)
+```bash
+# Run tests with
+$ yarn test
+# or
+$ npm run test
+
+# Run tests in watch mode
+$ yarn test:watch
+# or
+$ npm run test:watch
+```
 
 ## Revert commit
 
 [click here](https://github.com/stbestichhh/MdToHtmlConverter/commit/2accdf51205bdd68e40f99c9c722360dc5ca04cf)
+
+## Tests fell commit
+
+[1st case](https://github.com/stbestichhh/MdToHtmlConverter/commit/999f605e0114fb5245bea8552b6e200a4aef0da9)
+
+[2nd case](https://github.com/stbestichhh/MdToHtmlConverter/commit/3015a9dd45f8f85bd1ceebda79c136061cdd66a0)
