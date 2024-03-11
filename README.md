@@ -18,8 +18,8 @@ This is a command line interface application for converting markdown syntax to h
 Clone a git repository:
 
 ```bash
-git clone https://github.com/stbestichhh/MdToHtmlConverter.git
-cd MdToHtmlConverter
+$ git clone https://github.com/stbestichhh/MdToHtmlConverter.git
+$ cd MdToHtmlConverter
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ cd MdToHtmlConverter
 Use as a cli command:
 
 ```bash
-yarn convert <Path/to/markdown/file> //Outputs html to console
-yarn convert <Path/to/markdown/file> --out <Path/to/html/file> //Outputs to file or creates a new one
+$ yarn convert <Path/to/markdown/file> //Outputs html to console
+$ yarn convert <Path/to/markdown/file> --out <Path/to/html/file> //Outputs to file or creates a new one
 ```
 > [!HINT]
 > You can use `npm run convert` instead of `yarn convert`
