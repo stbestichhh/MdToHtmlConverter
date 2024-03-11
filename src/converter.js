@@ -43,7 +43,7 @@ class Converter {
     },
   ];
 
-  convert(dtFlag) {
+  convert(dtFlag, format) {
     fs.readFile(this.mdFile, 'utf8', (err, data) => {
       if (err) {
         throw new Error('Cannot read file');
@@ -71,12 +71,31 @@ class Converter {
   ${this.setPreformattedText(paragraphs)}
 </body>
 </html>`
-        this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
+
+        this.print(result, format)
       } else {
         const result = this.setPreformattedText(paragraphs);
-        this.htmlFile ? fs.writeFileSync(this.htmlFile, result) : console.log(result);
+        this.print(result, format);
       }
     });
+  }
+
+  print(result, format) {
+    if (this.htmlFile) {
+      fs.writeFileSync(this.htmlFile, result);
+    } else {
+      if (format && format.toLowerCase() === 'html') {
+        console.log(result);
+      } else if (format && format.toLowerCase() === 'formatted') {
+        this.printFormattedText(result);
+      } else {
+        console.log(result);
+      }
+    }
+  }
+
+  printFormattedText(text) {
+    console.log('\x1b[7m%s\x1b[0m', text);
   }
 
   getPreformatedText(text) {
