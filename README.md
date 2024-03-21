@@ -1,4 +1,4 @@
-[![Node.js CI](https://github.com/stbestichhh/Flowly-backend/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/stbestichhh/Flowly-backend/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/stbestichhh/MdToHtmlConverter/actions/workflows/node.js.yml/badge.svg)](https://github.com/stbestichhh/MdToHtmlConverter/actions/workflows/node.js.yml)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
